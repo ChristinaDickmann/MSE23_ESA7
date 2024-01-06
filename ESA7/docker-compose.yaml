@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    calculator:
+        build:
+            context: ./Calculator
+        ports:
+            - 8000:8000
+        networks:
+            - esa7network
+        #volumes:
+         #   - ./app:/app
+
+    validator:
+        build:
+            context: ./Validator
+        ports:
+            - 8080:8080
+        networks:
+            - esa7network
+    
+networks:
+    esa7network:
